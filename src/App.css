@@ -1,0 +1,116 @@
+.App{
+    display: flex;
+}
+
+body{
+    background-image: url(./images/photo-1618005182384-a83a8bd57fbe.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.user__form{
+    background-color: white;
+    height: 100vh;
+    position: relative;
+    bottom: 10px;
+    right: 8px;
+    padding: 10px;
+}
+
+.users-list{
+    height: 100vh;    
+}
+
+.user{
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 10px;
+    display: flex;
+    margin: 30px 0;
+    text-align: center;
+    
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.email{
+    color: rgb(0 0 0 /.8);
+    margin-bottom: 10px;
+}
+
+.birthday {
+    align-items: center;
+    display: flex;
+    margin-top: 5px;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    margin-left: 30px;
+}
+li{
+    list-style: none;
+}
+
+.btn-delete{
+    margin-right: 20px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-edit{
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+}
+.input__birthday{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.buttons__inputs{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.button-upload{
+    background: lightseagreen;
+    border: none;
+    border-radius: 5px;
+    color: white;    
+}
+input{
+    border: none;
+}
+
+.input__first-name{
+    display: flex;
+}
+
+.input__email{
+    display: flex;
+}
+.input__password{
+    display: flex;
+}
+
+.input__birthday{
+    display: flex;
+    flex-direction: row;
+}
