@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { get } from "./components/hook/Services";
+import { get, remove } from "./components/hook/Usability";
 import "./App.css";
-import { remove } from "./components/hook/Services";
 import UsersForm from "./components/UsersForm";
 import UsersList from "./components/UsersList";
 
@@ -37,8 +36,7 @@ function App() {
         removeUser={removeUser}
         editActualUser={editActualUser}
       />
-     
     </div>
   );
 }
-export default App
+export default App;

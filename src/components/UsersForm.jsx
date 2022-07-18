@@ -1,8 +1,8 @@
-import React from "react";
-import { put } from "./hook/Services";
+import React, { useEffect } from "react";
+import { put, post } from "./hook/Usability";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
-import 'boxicons'
+import "boxicons";
+
 const defaultInfo = {
   first_name: "",
   last_name: "",
@@ -17,23 +17,28 @@ const UsersForm = ({ getUsers, editUser, deselectEdit }) => {
   useEffect(() => {
     if (editUser) {
       reset(editUser);
-    } else reset(defaultInfo);
+    } else {
+      reset(defaultInfo);
+    }
   }, [editUser, reset]);
 
-  const onSubmit = (data, event) => {
+  const onSubmit = (data) => {
     if (editUser) {
       put(`users/${editUser.id}/`, data).then(() => getUsers());
+      deselectEdit();
+    } else {
+      post(`users/`, data).then(() => getUsers());
     }
     reset(defaultInfo);
   };
   return (
     <div className="user__form">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form action="" onSubmit={handleSubmit(onSubmit)}>
         <h2>New user</h2>
         <div className="input__form">
           <div className="input__first-name">
             <label htmlFor="firstname">
-              <box-icon type='solid' name='user'></box-icon>
+              <box-icon type="solid" name="user"></box-icon>
             </label>
             <div className="input__name">
               <input
@@ -52,7 +57,7 @@ const UsersForm = ({ getUsers, editUser, deselectEdit }) => {
           </div>
           <div className="input__email">
             <label htmlFor="email">
-              <box-icon type='solid' name='envelope'></box-icon>
+              <box-icon type="solid" name="envelope"></box-icon>
             </label>
             <input
               type="email"
@@ -63,7 +68,7 @@ const UsersForm = ({ getUsers, editUser, deselectEdit }) => {
           </div>
           <div className="input__password">
             <label htmlFor="password">
-              <box-icon type='solid' name='lock-alt'></box-icon>
+              <box-icon type="solid" name="lock-alt"></box-icon>
             </label>
             <input
               type="password"
@@ -74,7 +79,7 @@ const UsersForm = ({ getUsers, editUser, deselectEdit }) => {
           </div>
           <div className="input__birthday">
             <label htmlFor="birthday">
-              <box-icon type='solid' name='cake'></box-icon>
+              <box-icon type="solid" name="cake"></box-icon>
             </label>
             <input type="date" id="birthday" {...register("birthday")} />
           </div>
